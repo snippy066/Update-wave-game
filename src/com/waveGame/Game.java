@@ -23,7 +23,7 @@ public class Game extends Canvas implements Runnable {
 	private Random r;
 	private HUD hud;
 	
-	public gameMain() {
+	public Game() {
 		handler=new Handler();
 		
 		this.addKeyListener(new KeyInput(handler));
@@ -143,7 +143,7 @@ public class Game extends Canvas implements Runnable {
 	 }
 	 
 	public static void main(String[] args) {
-		new gameMain();
+		new Game();
 
 	}
 

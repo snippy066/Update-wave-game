@@ -9,7 +9,7 @@ public class Window extends Canvas {
 
 	private static final long serialVersionUID = 1L;
 	
-	public Window(int width, int height, String title,gameMain game) {
+	public Window(int width, int height, String title,Game game) {
 		JFrame frm=new JFrame(title);
 		
 		frm.setPreferredSize(new Dimension(width,height));
