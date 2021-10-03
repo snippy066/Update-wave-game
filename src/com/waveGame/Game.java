@@ -22,6 +22,7 @@ public class Game extends Canvas implements Runnable {
 	private Handler handler;
 	private Random r;
 	private HUD hud;
+	private Spawner spawn;
 	
 	public Game() {
 		handler=new Handler();
@@ -30,16 +31,13 @@ public class Game extends Canvas implements Runnable {
 		new Window(w,h,tit,this);
 		
 		hud=new HUD();
+		spawn=new Spawner(handler,hud);
+		
 		
 		r=new Random();
 		
 		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player,handler));
 		
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
 		
 	}
 
