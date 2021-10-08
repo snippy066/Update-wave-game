@@ -8,6 +8,9 @@ public class HUD {
 	public static int health=100;
 	private int greenColor=255;
 	
+	private int score=0;
+	private int level=1;
+	
 	public void tick() {
 //		health--;
 		
@@ -16,6 +19,8 @@ public class HUD {
 		
 		
 		greenColor=health*2;
+		
+		score++;
 		
 	}
 	
@@ -32,6 +37,24 @@ public class HUD {
 		g.setColor(Color.WHITE);
 		g.drawRect(3, 3, 200, 28);
 		
+		g.drawString("Score :" +score ,500,10);
+		g.drawString("Level :" +level ,650,10);
+		
+	}
+	
+	public void setScore(int score) {
+		this.score=score;	
+	}
+	
+	public int getScore() {
+		return score;
+	}
+	
+    public int getLevel() {
+    	return level;
+    }
+    public void setLevel(int level) {
+		this.level=level;
 	}
 
 }
