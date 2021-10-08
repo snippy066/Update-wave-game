@@ -25,7 +25,7 @@ public class BasicEnemy extends GameObject{
 		if(y<=0 || y>=Game.h-32)  spdY*=-1;
 		if(x<=0 || x>=Game.w-64)  spdX*=-1;
 		
-		handler.addObject(new BasicTrail(x,y,Color.yellow,16,16,0.01f,ID.BasicTrail,handler));
+		handler.addObject(new BasicTrail(x,y,Color.red,16,16,0.01f,ID.BasicTrail,handler));
 		
 	}
 
