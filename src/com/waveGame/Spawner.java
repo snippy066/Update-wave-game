@@ -27,8 +27,10 @@ public class Spawner  {
 	    	hud.setLevel(level);
 	    	if(level%2==0)
 	    	handler.addObject(new BasicEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.BasicEnemy,handler));
+//	    	else if(level%3==0)
+//	    		handler.addObject(new UpdatedEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.SmartEnemy,handler));
 	    	else
-	    		handler.addObject(new UpdatedEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.UpdatedEnemy,handler));
+	    		handler.addObject(new SmartEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.SmartEnemy,handler));
 	    }
    }
 }
