@@ -27,6 +27,8 @@ public class Handler {
     	}
     }
     
+    
+    
     public void addObject(GameObject object) {
     	this.obj.add(object);
     }

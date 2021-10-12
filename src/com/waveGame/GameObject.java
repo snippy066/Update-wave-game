@@ -7,7 +7,7 @@ public abstract class GameObject {
 
 	protected int x,y;
 	protected ID id;
-	protected int spdX,spdY;
+	protected float spdX,spdY;
 	
 	public GameObject(int x,int y,ID id) {
 		this.x=x;
@@ -41,17 +41,17 @@ public abstract class GameObject {
 	}
 	
 	
-	public void setSpeedX(int speedx) {
+	public void setSpeedX(float speedx) {
 		this.spdX=speedx;
 	}
-	public int getSpeedx() {
+	public float getSpeedx() {
 		return spdX;
 	}
 	
-	public void setSpeedY(int speedy) {
+	public void setSpeedY(float speedy) {
 		this.spdY=speedy;
 	}
-	public int getSpeedy() {
+	public float getSpeedy() {
 		return spdY;
 	}
 	

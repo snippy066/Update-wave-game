@@ -25,12 +25,15 @@ public class Spawner  {
 	    	scoreLevel+=100;
 	    	int level=hud.getLevel()+1;
 	    	hud.setLevel(level);
-	    	if(level%2==0)
-	    	handler.addObject(new BasicEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.BasicEnemy,handler));
+	    	
+	    	
+	    	
+//	    	if(level%2==0)
+//	    	handler.addObject(new BasicEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.BasicEnemy,handler));
 //	    	else if(level%3==0)
 //	    		handler.addObject(new UpdatedEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.SmartEnemy,handler));
-	    	else
-	    		handler.addObject(new SmartEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.SmartEnemy,handler));
+//	    	else
+//	    		handler.addObject(new SmartEnemy(r.nextInt(Game.w-50),r.nextInt(Game.h-50),ID.SmartEnemy,handler));
 	    }
    }
 }

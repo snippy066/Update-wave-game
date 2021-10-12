@@ -23,8 +23,8 @@ public class Player extends GameObject {
 		x+=spdX;
 		y+=spdY;
 		
-		x=Game.clamp(x, 3, Game.w-48);
-		y=Game.clamp(y, 3, Game.h-72);
+		x=(int) Game.clamp(x, 3, Game.w-48);
+		y=(int) Game.clamp(y, 3, Game.h-72);
 		
 		 handler.addObject(new BasicTrail(x,y,Color.white,32,32,0.05f,ID.BasicTrail,handler));
 		

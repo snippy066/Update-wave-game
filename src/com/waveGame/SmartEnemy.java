@@ -39,14 +39,14 @@ public class SmartEnemy extends GameObject{
 //		if(y<=0 || y>=Game.h-32)  spdY*=-1;
 //		if(x<=0 || x>=Game.w-64)  spdX*=-1;
 		
-		handler.addObject(new BasicTrail(x,y,Color.yellow,16,16,0.01f,ID.BasicTrail,handler));
+		handler.addObject(new BasicTrail(x,y,Color.green,16,16,0.01f,ID.BasicTrail,handler));
 		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		g.setColor(Color.yellow);
+		g.setColor(Color.green);
 		g.fillRect(x,y,16,16);
 		
 	}
