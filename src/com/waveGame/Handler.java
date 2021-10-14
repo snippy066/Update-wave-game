@@ -27,6 +27,16 @@ public class Handler {
     	}
     }
     
+    public void clearEnemy() {
+    	for(int i=0;i<obj.size();i++) {
+    		GameObject temp=obj.get(i);
+    		
+    		if(temp.getId()==ID.Player) {
+    			obj.clear();
+    			addObject(new Player(temp.getX(),temp.getY(),ID.Player,this));
+    		}
+    	}
+    }
     
     
     public void addObject(GameObject object) {
