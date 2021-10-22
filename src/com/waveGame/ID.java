@@ -1,3 +1,4 @@
+
 package com.waveGame;
 
 public enum ID {
@@ -7,6 +8,7 @@ public enum ID {
 	UpdatedEnemy(),
 	SmartEnemy(),
 	BossEnemy(),
+	Particle(),
 	BasicTrail();
 	
 
