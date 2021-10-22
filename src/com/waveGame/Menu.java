@@ -14,10 +14,12 @@ public class Menu extends MouseAdapter{
 	private Game game;
 	private Handler handler;
 	private Random r=new Random();
+	private HUD hud;
 	
-	public Menu(Game game,Handler handler) {
+	public Menu(Game game,Handler handler,HUD hud) {
 		this.game=game;
 		this.handler=handler;
+		this.hud=hud;
 	}
 	
 	public void mousePressed(MouseEvent e) {
@@ -30,6 +32,7 @@ public class Menu extends MouseAdapter{
 			if(mouseOver(mx,my,(game.w/2)-100, (game.h/2)-100,200, 35)) {
 				game.gameState=STATE.Game;
 				handler.addObject(new Player(game.w/2-32,game.h/2-32 ,ID.Player,handler));
+				handler.clearEnemy();
 				handler.addObject(new BasicEnemy(r.nextInt(game.w-50),r.nextInt(game.h-50),ID.BasicEnemy,handler));
 				
 			}
@@ -48,8 +51,10 @@ public class Menu extends MouseAdapter{
 		
 			
 		//back button
-		if(game.gameState==STATE.help) {
+		if(game.gameState==STATE.help || game.gameState==STATE.end) {
 			if(mouseOver(mx,my,(game.w/2)-100, (game.h/2)+100,200, 35)) {
+				 hud.setLevel(1);
+				 hud.setScore(0);
 				game.gameState=STATE.Menu;
 				return;
 			}
@@ -113,6 +118,25 @@ public class Menu extends MouseAdapter{
 			
 			g.setFont(fnt);
 			g.drawString("Back",(game.w/2)-25,(game.h/2)+125);
+			g.drawRect((game.w/2)-100, (game.h/2)+100,200, 35);
+		}
+		
+		else if(game.gameState==STATE.end) {
+			Font font=new Font("Arial",1,40);
+			Font fnt=new Font("Arial",1,18);
+			Font fnt2=new Font("Arial",1,12);
+			
+			g.setFont(font);
+			g.setColor(Color.white);
+			g.drawString("Game Over",(game.w/2)-100, 60);
+			g.drawLine((game.w/2)-100,80,(game.w/2)+100,80);
+			
+			g.setFont(fnt2);
+			g.drawString("You lost , Your Score is :"+hud.getScore(),(game.w/2)-100,(game.h/2)-100);
+			
+			
+			g.setFont(fnt);
+			g.drawString("Try Again",(game.w/2)-45,(game.h/2)+125);
 			g.drawRect((game.w/2)-100, (game.h/2)+100,200, 35);
 		}
 	}
